@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<title>phpservertest</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="../public/css/stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="../public/js/init-material.js"></script>
+	<script src="../public/js/headerbtns.js"></script>
+
+	<nav class="grey lighten-1 white-text">
+		<div class="nav-wrapper container">
+			<a href="#" class="brand-logo"><i class="material-icons medium left">language</i>Title</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#">Page2</a></li>
+				<li><a href="#">Page3</a></li>
+				<li><a href="#">Page4</a></li>
+			</ul>
+
+			<ul class="side-nav" id="mobile-demo">
+
+				<img class="materialboxed" width="300px" src="https://static.pexels.com/photos/1029/landscape-mountains-nature-clouds.jpg">
+
+				<li><a href="#">Page2</a></li>
+				<li><a href="#">Page3</a></li>
+				<li><a href="#">Page4</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" id="wrapper">
+
+		<div class="row">
+
+			<form class="col s12">
+
+				<div class="row">
+					<div class="input-field col s12">
+
+						<i class="material-icons prefix grey-text darken-3">list</i>
+						<select id="optionselect">
+							<option value="" disabled selected>Choose your Area</option>
+							<option value="Option 1">USA</option>
+							<option value="Option 2">UK</option>
+						</select>
+						<label>Select</label>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix grey-text darken-3">account_circle</i>
+						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<label for="first_name">First Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" class="validate">
+						<label for="last_name">Last Name</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix grey-text darken-3">fingerprint</i>
+						<input id="password_enter1" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+
+					<div class="input-field col s6">
+						<input id="password_enter2" type="password" class="validate">
+						<label for="password">Repeat Password</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix grey-text darken-3">email</i>
+						<input id="email" type="email" class="validate">
+						<label for="email" data-error="Invalid Email Address" data-success="Valid Email Address">Email</label>
+						<label for="email">Email</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s6">
+						<a id="btnsubmit" class="waves-effect waves-dark btn btn100 grey lighten-1 z-depth-0">Submit</a>
+					</div>
+
+					<div class="col s6">
+						<a id="btnreq" class="waves-effect waves-dark btn btn100 grey lighten-1 z-depth-0">Request</a>
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+		<br />
+
+		<!-- loads in patial user-template -->
+		<div id="userstable-div">
+		</div>
+
+	</div>
+
+</body>
+
+<!--  patial user-template -->
+<script id="user-template" type="text/x-handlebars-template">
+
+	<table id="userstable" class="centered striped">
+		<thead>
+			<tr>
+				<th data-field="id">ID</th>
+				<th data-field="forename">Forename</th>
+				<th data-field="surname">Surname</th>
+				<th data-field="email">Email</th>
+				<th data-field="update">Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each .}}
+			<tr class="record_{{id}}">
+				<td>{{id}}</td>
+				<td>
+					<div class="editdiv">
+						<div class="editfield">
+							<input value={{forename}} name="forenameinput" type="text" class="validate center">
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="editdiv">
+						<div class="editfield">
+							<input value={{surname}} name="surnameinput" type="text" class="validate center">
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="editdiv">
+						<div class="editfield">
+							<input value={{email}} name="emailinput" type="text" class="validate center">
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="editdiv center">
+						<a data-id="{{id}}" class="updaterecord waves-effect waves-light green-text btn-flat">Update</a>
+					</div>
+				</td>
+			</tr>
+			{{/each}}
+
+		</tbody>
+	</table>
+
+</script>
+
+<script src="../public/js/form.js"></script>
+
+</html>

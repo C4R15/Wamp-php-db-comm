@@ -1,0 +1,19 @@
+html, body {
+	background-color: #fff;
+}
+.btn100 {
+	width: 100%;
+}
+div#wrapper {
+	padding-top: 30px;
+}
+div#userstable-div {
+	padding-bottom: 30px;
+}
+.editdiv {
+	width: 60%;
+	margin: auto;
+}
+.editfield {
+	width: 100%;
+}
