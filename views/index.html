@@ -22,7 +22,7 @@
 	<script src="../public/js/init-material.js"></script>
 	<script src="../public/js/headerbtns.js"></script>
 
-	<nav class="grey lighten-1 white-text">
+	<nav class="light-blue lighten-1 white-text">
 		<div class="nav-wrapper container">
 			<a href="#" class="brand-logo"><i class="material-icons medium left">language</i>Title</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -33,14 +33,15 @@
 				<li><a href="#">Page4</a></li>
 			</ul>
 
-			<ul class="side-nav" id="mobile-demo">
+			<ul class="side-nav sidebar1 fixed" id="slide-out">
+				<img class="sidebarimg" src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-77999.jpg">
 
-				<img class="materialboxed" width="300px" src="https://static.pexels.com/photos/1029/landscape-mountains-nature-clouds.jpg">
-
-				<li><a href="#">Page2</a></li>
-				<li><a href="#">Page3</a></li>
-				<li><a href="#">Page4</a></li>
+				<a href="#" class="collection-item active">Option1</a>
+				<a href="#" class="collection-item">Option2</a>
+				<a href="#" class="collection-item">Option3</a>
+				<a href="#" class="collection-item">Option4</a>
 			</ul>
+			<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 		</div>
 	</nav>
 
@@ -49,25 +50,23 @@
 		<div class="row">
 
 			<form class="col s12">
-
+				<h4>Form</h4>
 				<div class="row">
 					<div class="input-field col s12">
-
 						<i class="material-icons prefix grey-text darken-3">list</i>
 						<select id="optionselect">
 							<option value="" disabled selected>Choose your Area</option>
-							<option value="Option 1">USA</option>
-							<option value="Option 2">UK</option>
+							<option value="USA">USA</option>
+							<option value="UK">UK</option>
 						</select>
 						<label>Select</label>
-
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="input-field col s6">
 						<i class="material-icons prefix grey-text darken-3">account_circle</i>
-						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+						<input id="first_name" type="text" class="validate">
 						<label for="first_name">First Name</label>
 					</div>
 					<div class="input-field col s6">
@@ -100,11 +99,11 @@
 
 				<div class="row">
 					<div class="col s6">
-						<a id="btnsubmit" class="waves-effect waves-dark btn btn100 grey lighten-1 z-depth-0">Submit</a>
+						<a id="btnsubmit" class="waves-effect waves-dark btn btn100 green lighten-1 z-depth-0">Submit</a>
 					</div>
 
 					<div class="col s6">
-						<a id="btnreq" class="waves-effect waves-dark btn btn100 grey lighten-1 z-depth-0">Request</a>
+						<a id="btnreq" class="waves-effect waves-dark btn btn100 orange lighten-1 z-depth-0">Request</a>
 					</div>
 				</div>
 
@@ -112,6 +111,24 @@
 		</div>
 
 		<br />
+
+		<div class="passwordForID">
+			<h4>Check Password for user ID</h4>
+			<div class="row">
+				<div class="input-field col s3">
+					<i class="material-icons prefix grey-text darken-3">compare_arrows</i>
+					<input id="passwordsearch_id" type="text" class="validate">
+					<label for="passwordsearch_id">ID</label>
+				</div>
+				<div class="input-field col s5">
+					<input id="passwordsearch_input" type="password" class="validate">
+					<label for="passwordsearch_input">Password</label>
+				</div>
+				<div class="input-field col s4">
+					<a class="btn waves-effect waves-light btn100 red" id="checkPassOnDbBtn">Check</a>
+				</div>
+			</div>
+		</div>
 
 		<!-- loads in patial user-template -->
 		<div id="userstable-div">

@@ -1,5 +1,9 @@
 html, body {
 	background-color: #fff;
+	margin-left: 300px;
+}
+.sidebarimg {
+	height: 200px;
 }
 .btn100 {
 	width: 100%;
