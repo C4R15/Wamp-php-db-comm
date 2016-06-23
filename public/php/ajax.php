@@ -6,6 +6,9 @@ $username = "root";
 $password = "";
 $dbname = "phpservertest";
 
+//Salt
+$salt = "It's high noon somewhere in the world.";
+
 $action = $_POST['action'];
 
 if($action=="submit") {
@@ -26,6 +29,7 @@ function insertData (){
 	global $username;
 	global $password;
 	global $dbname;
+	global $salt;
 
 	$optionselect = $_POST['optionselect'];
 	$forename = $_POST['forename'];
@@ -46,7 +50,6 @@ function insertData (){
 	}
 
 	//Encrypt password
-	$salt = "It's high noon somewhere in the world.";
 	$encryptedPassword = md5($password_enter1.$salt);
 	$password_enter1 = $encryptedPassword;
 
@@ -145,6 +148,7 @@ function comparepass() {
 	global $username;
 	global $password;
 	global $dbname;
+	global $salt;
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	if ($conn->connect_error) {
@@ -164,6 +168,9 @@ function comparepass() {
 
 	$passwordsearch_id = $_POST['passwordsearch_id'];
 	$passwordsearch_input = $_POST['passwordsearch_input_s'];
+
+	$passwordsearch_input_encrypted = md5($passwordsearch_input.$salt);
+	$passwordsearch_input = $passwordsearch_input_encrypted;
 
 	$seachid = ($passwordsearch_id - 1);
 	$passwordsarray_forid = $passwordsarray[$seachid];
